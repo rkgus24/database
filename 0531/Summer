@@ -1,0 +1,22 @@
+// Summer 테이블 만들기
+create table summer(
+   Sid number,
+   Class varchar2(20),
+   Price number
+);
+insert into summer values (100, 'fortran', 20000);
+insert into summer values (150, 'parscal', 15000);
+insert into summer values (200, 'c', 10000);
+insert into summer values (250, 'fortran', 20000);
+
+// 1. 계절학기를 듣는 학생의 학번과 수강하는 과목은?
+select *
+from summer;
+// 2. C 강좌의 수강료는?
+select price
+from summer
+where like class = 'C';
+// 3. 수강료가 가장 비싼 과목은?
+select class
+from summer
+where max(price)
